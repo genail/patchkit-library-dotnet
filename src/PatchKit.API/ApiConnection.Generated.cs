@@ -60,6 +60,12 @@ namespace PatchKit.Api
             /// <summary></summary>
             [JsonProperty("files")]
             public AppContentSummaryFile[] Files;
+            /// <summary></summary>
+            [JsonProperty("hash_code")]
+            public string HashCode;
+            /// <summary></summary>
+            [JsonProperty("chunks")]
+            public Chunks Chunks;
         }
         
         public struct AppContentSummaryFile
@@ -70,6 +76,16 @@ namespace PatchKit.Api
             /// <summary>File hash.</summary>
             [JsonProperty("hash")]
             public string Hash;
+        }
+        
+        public struct Chunks
+        {
+            /// <summary></summary>
+            [JsonProperty("size")]
+            public int Size;
+            /// <summary></summary>
+            [JsonProperty("hashes")]
+            public string[] Hashes;
         }
         
         public struct AppDiffSummary
@@ -92,6 +108,12 @@ namespace PatchKit.Api
             /// <summary>List of removed files.</summary>
             [JsonProperty("removed_files")]
             public string[] RemovedFiles;
+            /// <summary></summary>
+            [JsonProperty("hash_code")]
+            public string HashCode;
+            /// <summary></summary>
+            [JsonProperty("chunks")]
+            public Chunks Chunks;
         }
         
         public struct AppContentTorrentUrl

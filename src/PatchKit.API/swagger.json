@@ -1,4 +1,4 @@
-﻿{
+{
     "swagger": "2.0",
     "info": {
         "version": "1.0.0",
@@ -757,6 +757,12 @@
                     "items": {
                         "$ref": "#/definitions/AppContentSummaryFile"
                     }
+                },
+                "hash_code": {
+                    "type": "string"
+                },
+                "chunks": {
+                    "$ref": "#/definitions/Chunks"
                 }
             }
         },
@@ -770,6 +776,20 @@
                 "hash": {
                     "type": "string",
                     "description": "File hash."
+                }
+            }
+        },
+        "Chunks": {
+            "type": "object",
+            "properties": {
+                "size": {
+                    "type": "integer"
+                },
+                "hashes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
                 }
             }
         },
@@ -809,6 +829,12 @@
                         "type": "string"
                     },
                     "description": "List of removed files."
+                },
+                "hash_code": {
+                    "type": "string"
+                },
+                "chunks": {
+                    "$ref": "#/definitions/Chunks"
                 }
             }
         },
